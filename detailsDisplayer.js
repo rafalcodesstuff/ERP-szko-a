@@ -1,8 +1,10 @@
-function showProductDetails(name, category, description) {
+function showProductDetails(nazwa, kategoria, id, cena_netto) {
     productInfo.innerHTML = `
         <h3>${name}</h3>
-        <p><strong>Category:</strong> ${category}</p>
-        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>kategoria:</strong> ${kategoria}</p>
+        <p><strong>opis:</strong> ${opis}</p>
+        <p><strong>id:</strong> ${id}</p>
+        <p><strong>cena_netto:</strong> ${cena_netto}</p>
     `;
 
     productDetails.style.display = 'block';
