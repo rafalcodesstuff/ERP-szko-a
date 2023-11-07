@@ -1,8 +1,8 @@
 // Data - Sample products and people
 const documents = [
-    { name: "Dokument A", category: "Category 1" },
-    { name: "Dokument B", category: "Category 2" },
-    { name: "Dokument C", category: "Category 1" },
+    { name: "Faktura A", category: "Category 1" },
+    { name: "Faktura B", category: "Category 2" },
+    { name: "Faktura C", category: "Category 1" },
     // Add more products as needed
 ];
 
@@ -22,8 +22,9 @@ function performSearch() {
         resultElement.classList.add('col-md-12', 'mb-2');
         resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.name}', '${result.category}', '${result.description}')">
                                         <div class="card-body">
-                                            <h5 class="card-title">${result.name}</h5>
-                                            <p class="card-text">${result.category ? result.category : result.role}</p>
+                                            <span class="card-text"><b>${result.name}</b></span>
+                                            <span class="card-text">  |  </span>
+                                            <span class="card-text">${result.category ? result.category : result.role}</span>
                                         </div>
                                     </div>`;
         searchResultsContainer.appendChild(resultElement);
