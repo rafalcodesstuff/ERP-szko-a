@@ -3,7 +3,7 @@ function showProductDetails(name, kategoria, id, cena_netto) {
         <h3>${name}</h3>
         <p><strong>kategoria:</strong> ${kategoria}</p>
         <p><strong>id:</strong> ${id}</p>
-        <p><strong>cena_netto:</strong> ${cena_netto}</p>
+        <p><strong>cena netto:</strong> ${cena_netto}</p>
     `;
 
     productDetails.style.display = 'block';
