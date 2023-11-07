@@ -20,16 +20,16 @@ function performSearch() {
 
     // Search through products
     const productResults = products.filter(product =>
-        product.name.toLowerCase().includes(searchInput) 
+        product.nazwa.toLowerCase().includes(searchInput) 
     );
 
     productResults.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.classList.add('col-md-6', 'mb-2');
-        resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.name}', '${result.category}', '${result.description}')">
+        resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.nazwa}', '${result.kategoria}', '${result.id}','${result.cena_netto}')">
                                         <div class="card-body">
-                                            <h5 class="card-title">${result.name}</h5>
-                                            <p class="card-text">${result.category ? result.category : result.role}</p>
+                                            <h5 class="card-title">${result.nazwa}</h5>
+                                            <p class="card-text">${result.kategoria ? result.kategoria : result.role}</p>
                                         </div>
                                     </div>`;
         searchResultsContainer.appendChild(resultElement);
