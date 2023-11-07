@@ -20,7 +20,7 @@ function performSearch() {
     productResults.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.classList.add('col-md-12', 'mb-2');
-        resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.name}', '${result.category}', '${result.description}')">
+        resultElement.innerHTML = `<div class="card" onclick="showDocumentDetails('${result.name}', '${result.category}', '${result.description}')">
                                         <div class="card-body">
                                             <span class="card-text"><b>${result.name}</b></span>
                                             <span class="card-text">  |  </span>
