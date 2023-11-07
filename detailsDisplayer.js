@@ -1,4 +1,4 @@
-function showProductDetails(name, category, description) {
+function showProductDetails(nazwa, kategoria, id, cena_netto) {
     productInfo.innerHTML = `
         <h3>${name}</h3>
         <p><strong>Kategoria:</strong> ${kategoria}</p>
