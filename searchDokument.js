@@ -19,7 +19,7 @@ function performSearch() {
 
     productResults.forEach(result => {
         const resultElement = document.createElement('div');
-        resultElement.classList.add('col-md-6', 'mb-2');
+        resultElement.classList.add('col-md-12', 'mb-2');
         resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.name}', '${result.category}', '${result.description}')">
                                         <div class="card-body">
                                             <h5 class="card-title">${result.name}</h5>

@@ -1,9 +1,8 @@
 // Data - Sample products and people
 const Kontrahents = [
-    { name: "Kontrahent A", category: "Category 1" },
-    { name: "Kontrahent B", category: "Category 2" },
-    { name: "Kontrahent C", category: "Category 1" },
-    // Add more products as needed
+    { name: "Kontrahent A", category: "Klient" },
+    { name: "Kontrahent B", category: "Dostawca" },
+    { name: "Kontrahent C", category: "Klient" },
 ];
 
 // Function to perform search and display results
