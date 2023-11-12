@@ -1,14 +1,12 @@
 // Data - Sample reports
 const reports = [
-    { name: "Raport 1", category: "Category 1" },
-    { name: "Raport 2", category: "Category 2" },
-    { name: "Raport 3", category: "Category 1" },
-    { name: "Raport 4", category: "Category 1" },
-    { name: "Raport 5", category: "Category 2" },
-    { name: "Raport 6", category: "Category 1" },
-    { name: "Raport 7", category: "Category 1" },
-    { name: "Raport 8", category: "Category 2" },
-    { name: "Raport 9", category: "Category 1" },
+    { Nazwa: "Sprzedaż X.2023", Kategoria: "Sprzedaż" },
+    { Nazwa: "Ceny II kwartał 2023", Kategoria: "Towary" },
+    { Nazwa: "Analiza trendów sprzedaży", Kategoria: "Sprzedaż" },
+    { Nazwa: "Ankieta zadowolenia klientów", Kategoria: "Ankiety" },
+    { Nazwa: "Wynik finansowy 2022", Kategoria: "Finanse" },
+    { Nazwa: "Stany magazynowe na koniec 2022", Kategoria: "Towary" },
+    
 ];
 
 // Function to perform search and display results
@@ -18,16 +16,16 @@ function performSearch() {
     searchResultsContainer.innerHTML = ''; // Clear previous results
 
     const reportResults = reports.filter(report =>
-        report.name.toLowerCase().includes(searchInput) 
+        report.Nazwa.toLowerCase().includes(searchInput) 
     );
 
     reportResults.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.classList.add('col-md-6', 'mb-2');
-        resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.name}', '${result.category}', '${result.description}')">
+        resultElement.innerHTML = `<div class="card" onclick="showProductDetails('${result.Nazwa}', '${result.Kategoria}', '${result.description}')">
                                         <div class="card-body">
-                                            <h5 class="card-title">${result.name}</h5>
-                                            <p class="card-text">${result.category ? result.category : result.role}</p>
+                                            <h5 class="card-title">${result.Nazwa}</h5>
+                                            <p class="card-text">${result.Kategoria ? result.Kategoria : result.role}</p>
                                         </div>
                                     </div>`;
         searchResultsContainer.appendChild(resultElement);
