@@ -79,7 +79,7 @@ function showClientDetails(name, category, nip) {
                             <input type="text" class="form-control" id="clientKategoriaInput" placeholder="${category}">
                         </div>
                         <div class="form-group">
-                            <label for="clientNIPInput">Id</label>
+                            <label for="clientNIPInput">NIP</label>
                             <input type="text" class="form-control" id="clientNIPInput" placeholder="${nip}">
                         </div>
                     </form>

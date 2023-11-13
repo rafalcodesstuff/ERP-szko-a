@@ -54,28 +54,197 @@
         </nav>
     </header>
     <main id="main" class="container my-4">
+
+        <!-- Product Card -->
         <h1 class="mb-4">Ustawienia</h1>
-        <div class="card mb-2">
+        <div class="card mb-2" data-toggle="modal" data-target="#productModal">
             <div class="card-body">
                 <h2>Dodaj Produkt</h2>
             </div>
         </div>
-        <div class="card mb-2">
+
+        <!-- Product Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Dodaj Produkt (nie zapisuje, tylko wizualizacja)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="productNameInput">Nazwa</label>
+                                <input type="text" class="form-control" id="productNameInput" placeholder="nazwa">
+                            </div>
+                            <div class="form-group">
+                                <label for="productKategoriaInput">Kategoria</label>
+                                <input type="text" class="form-control" id="productKategoriaInput" placeholder="kategoria">
+                            </div>
+                            <div class="form-group">
+                                <label for="productIdInput">Id</label>
+                                <input type="text" class="form-control" id="productIdInput" placeholder="id">
+                            </div>
+                            <div class="form-group">
+                                <label for="productCenaInput">Cena Netto (zł) </label>
+                                <input type="text" class="form-control" id="productCenaInput" placeholder="cena_netto">
+                            </div>
+                            <div class="form-group">
+                                <label for="productStanInput">Stan Magazynowy (sztuki) </label>
+                                <input type="text" class="form-control" id="productStanInput" placeholder="stan">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Zapisz Zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Card  -->
+        <div class="card mb-2" data-toggle="modal" data-target="#reportModal">
             <div class="card-body">
                 <h2>Dodaj Raport</h2>
             </div>
         </div>
-        <div class="card mb-2">
+
+        <!-- Report Modal -->
+        <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="reportModalLabel">Dodaj Raport (nie zapisuje, tylko wizualizacja)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="reportNameInput">Nazwa</label>
+                                <input type="text" class="form-control" id="reportNameInput" placeholder="nazwa">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportKategoriaInput">Kategoria</label>
+                                <input type="text" class="form-control" id="reportKategoriaInput" placeholder="kategoria">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportIdInput">Ilość</label>
+                                <input type="text" class="form-control" id="reportIdInput" placeholder="ilość">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportCenaInput">Zmiany Cen</label>
+                                <input type="text" class="form-control" id="reportCenaInput" placeholder="zmiana cen">
+                            </div>
+                            <div class="form-group">
+                                <label for="reportStanInput">Trendy </label>
+                                <input type="text" class="form-control" id="reportStanInput" placeholder="trendy">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Zapisz Zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Faktura Card  -->
+        <div class="card mb-2" data-toggle="modal" data-target="#fakturaModal">
             <div class="card-body">
                 <h2>Dodaj Fakturę</h2>
             </div>
         </div>
-        <div class="card mb-2">
+
+        <!-- Faktura Modal -->
+        <div class="modal fade" id="fakturaModal" tabindex="-1" role="dialog" aria-labelledby="fakturaModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="fakturaModalLabel">Dodaj Fakturę (nie zapisuje, tylko wizualizacja)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="fakturaNameInput">Nazwa</label>
+                                <input type="text" class="form-control" id="fakturaNameInput" placeholder="nazwa">
+                            </div>
+                            <div class="form-group">
+                                <label for="fakturaKategoriaInput">Number Faktury</label>
+                                <input type="text" class="form-control" id="fakturaKategoriaInput" placeholder="number">
+                            </div>
+                            <div class="form-group">
+                                <label for="fakturaIdInput">Data Wystawienia</label>
+                                <input type="text" class="form-control" id="fakturaIdInput" placeholder="data">
+                            </div>
+                            <div class="form-group">
+                                <label for="fakturaCenaInput">Pozycja na fakturze</label>
+                                <input type="text" class="form-control" id="fakturaCenaInput" placeholder="pozycja">
+                            </div>
+                            <div class="form-group">
+                                <label for="fakturaStanInput">Kwota</label>
+                                <input type="text" class="form-control" id="fakturaStanInput" placeholder="kwota">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Zapisz Zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Klient Card  -->
+        <div class="card mb-2" data-toggle="modal" data-target="#klientModal">
             <div class="card-body">
                 <h2>Dodaj Kontrahenta</h2>
             </div>
         </div>
+
+        <!-- Klient Modal -->
+        <div class="modal fade" id="klientModal" tabindex="-1" role="dialog" aria-labelledby="klientModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="klientModalLabel">Dodaj Klienta (nie zapisuje, tylko wizualizacja)</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="clientNameInput">Nazwa</label>
+                                <input type="text" class="form-control" id="clientNameInput" placeholder="Imię i nazwisko lub nazwa firmy">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientKategoriaInput">Kategoria</label>
+                                <input type="text" class="form-control" id="clientKategoriaInput" placeholder="Kategoria">
+                            </div>
+                            <div class="form-group">
+                                <label for="clientNIPInput">NIP</label>
+                                <input type="text" class="form-control" id="clientNIPInput" placeholder="NIP">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Zapisz Zmiany</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
+
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2023 LampPol. Wszelkie prawa zastrzeżone.</p>
     </footer>
