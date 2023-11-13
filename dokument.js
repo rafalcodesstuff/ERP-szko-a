@@ -1,52 +1,46 @@
 // Data - Sample products and people
 const documents = [
     {
-        Nazwa: "Sprzedaż X.2023",
-        Numer: "401/A/2023",
-        Data: "2023-16-13T12:34:56.789Z",
-        Klient: "Małgorzata Kowalski",
-        Pozycja: "6z03rhrz3c64er3",
-        Kwota: 681
+        Nazwa: "Faktura VAT 401/2023",
+        Numer: "401/2023",
+        Data: "12.08.2023",
+        Klient: "Małgorzata Kowalska",
+        Kwota: "681,49zł"
     },
     {
-        Nazwa: "Ceny II kwartał 2023",
-        Numer: "932/B/2023",
-        Data: "2023-01-13T12:34:56.789Z",
+        Nazwa: "Faktura VAT 248/2023",
+        Numer: "248/2023",
+        Data: "29.02.2023",
         Klient: "Tomasz Szymański",
-        Pozycja: "hlsduzvm01hz2an",
-        Kwoty: 648
+        Kwota: "648,58zł"
     },
     {
-        Nazwa: "Analiza trendów sprzedaży",
-        Numer: "671/C/2023",
-        Data: "2023-11-13T12:34:56.789Z",
+        Nazwa: "Faktura VAT 671/2023",
+        Numer: "671/2023",
+        Data: "11.10.2023",
         Klient: "Piotr Dąbrowski",
-        Pozycja: "52n25oz0h49q9pj",
-        Kwoty: 216
+        Kwota: "216,57zł"
     },
     {
-        Nazwa: "Ankieta zadowolenia klientów",
+        Nazwa: "Faktura VAT 28/2023",
         Numer: "28/D/2023",
-        Data: "2023-22-13T12:34:56.789Z",
+        Data: "5.01.2023",
         Klient: "Anna Kowalczyk",
-        Pozycja: "4qdr5idnhkkh7dk",
-        Kwoty: 796
+        Kwota: "796,85zł"
     },
     {
-        Nazwa: "Wynik finansowy 2022",
-        Numer: "520/E/2023",
-        Data: "2023-28-13T12:34:56.789Z",
+        Nazwa: "Faktura VAT 520/2023",
+        Numer: "520/2023",
+        Data: "30.09.2023",
         Klient: "Joanna Kowalski",
-        Pozycja: "f2al0afvktmmz4b",
-        Kwoty: 882
+        Kwota: "752,99zł"
     },
     {
-        Nazwa: "Stany magazynowe na koniec 2022",
-        Numer: "815/F/2023",
-        Data: "2023-09-13T12:34:56.789Z",
+        Nazwa: "Faktura VAT 1012/2023",
+        Numer: "1012/2023",
+        Data: "13.11.2023",
         Klient: "Marcin Lewandowski",
-        Pozycja: "qsk58fgryqll4k4",
-        Kwoty: 324
+        Kwota: "324,25zł"
     }
 ];
 
@@ -65,7 +59,7 @@ function performSearch() {
     productResults.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.classList.add('col-md-12', 'mb-2');
-        resultElement.innerHTML = `<div class="card" onclick="showDocumentDetails('${result.Nazwa}', '${result.Numer}', '${result.Data}', '${result.Klient}', '${result.Pozycja}', '${result.Kwoty}')">
+        resultElement.innerHTML = `<div class="card" onclick="showDocumentDetails('${result.Nazwa}', '${result.Numer}', '${result.Data}', '${result.Klient}', '${result.Kwota}')">
                                         <div class="card-body">
                                             <span class="card-text"><b>${result.Nazwa}</b></span>
                                             <span class="card-text">  |  </span>
@@ -79,19 +73,18 @@ function performSearch() {
 // Event listener for search input
 document.getElementById('searchProductInput').addEventListener('input', performSearch);
 
-function showDocumentDetails(name, number, date, client, position, amount) {
+function showDocumentDetails(name, number, date, client, Kwoty) {
     productInfo.innerHTML = `
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">${name}</h3>
                 <p><strong>Numer faktury:</strong> ${number}</p>
-                <p><strong>Data wystawienia:</strong> ${Date(date)}</p>
+                <p><strong>Data wystawienia:</strong> ${date}</p>
                 <p><strong>Klient:</strong> ${client}</p>
-                <p><strong>Pozycje na fakturze:</strong> ${position}</p>
-                <p><strong>Kwoty:</strong> ${amount}</p>
+                <p><strong>Kwota:</strong> ${Kwoty}</p>
                 <button type="button" class="btn btn-secondary" 
                     onclick='(()=>{document.getElementById("download-warning").style.display = "block";})()'>
-                    Pobierz Raport
+                    Pobierz Fakturę
                 </button>
                 <div id="download-warning" class="alert alert-info mt-3" role="alert" style="display:none">
                     To jest przykład pobierania

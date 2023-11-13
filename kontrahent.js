@@ -54,7 +54,7 @@ function showClientDetails(name, category, nip) {
                 <h3 id="clientName" class="card-title">${name}</h3>
                 <p id="clientKategoria"><strong>Kategoria:</strong> ${category}</p>
                 <p id="clientNIP"><strong>NIP:</strong> ${nip}</p>
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#productModal">Edytuj Clienta</button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#productModal">Edytuj Kontrahenta</button>
             </div>
         </div>
 
