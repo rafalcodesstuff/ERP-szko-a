@@ -44,29 +44,33 @@ document.getElementById('searchProductInput').addEventListener('input', performS
 function editEntry(id) {
     let product = products.find(obj => obj.id == id);
 
-    product["nazwa"] = document.getElementById("productNameInput").value;
-    product["kategoria"] = document.getElementById("productKategoriaInput").value;
-    product["id"] = document.getElementById("productIdInput").value;
-    product["cena_netto"] = document.getElementById("productCenaInput").value;
-    product["stan"] = document.getElementById("productStanInput").value;
+    product["nazwa"] = document.getElementById("productNameInput").value || product["nazwa"];
+    product["kategoria"] = document.getElementById("productKategoriaInput").value || product["kategoria"];
+    product["id"] = document.getElementById("productIdInput").value || product["id"];
+    product["cena_netto"] = document.getElementById("productCenaInput").value || product["cena_netto"];
+    product["stan"] = document.getElementById("productStanInput").value || product["stan"];
 
     document.getElementById("productName").innerText = product["nazwa"];
-    document.getElementById("productCategory").innerText = product["kategoria"];
-    document.getElementById("productId").innerText = product["id"];
-    document.getElementById("productPrice").innerText = product["cena_netto"];
-    document.getElementById("productAmount").innerText = product["stan"];
+    document.getElementById("productCategory").innerHTML = `<strong>kategoria:</strong> ${product["kategoria"]}`;
+    document.getElementById("productId").innerHTML = `<strong>id:</strong> ${product["id"]}`;
+    document.getElementById("productPrice").innerHTML = `<strong>cena netto:</strong> ${product["cena_netto"].toString().replace(".", ",")}zł`;
+    document.getElementById("productAmount").innerHTML = `<strong>stan magazynowy:</strong> ${product["stan"]}`;
 
-    performSearch();
+    performSearch(); // updates the search results
 }
 
 function showProductDetails(name, kategoria, id, cena_netto,stan) {
     productInfo.innerHTML = `
-        <h3 id="productName">${name}</h3>
-        <p id="productCategory"><strong>kategoria:</strong> ${kategoria}</p>
-        <p id="productId"><strong>id:</strong> ${id}</p>
-        <p id="productPrice"><strong>cena netto:</strong> ${cena_netto.toString().replace(".", ",")}zł</p>
-        <p id="productAmount"><strong>stan magazynowy:</strong> ${stan} sztuk</p>
-        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#productModal">Edytuj Produkt</button>
+        <div class="card">
+            <div class="card-body">
+                <h3 id="productName" class="card-title">${name}</h3>
+                <p id="productCategory"><strong>kategoria:</strong> ${kategoria}</p>
+                <p id="productId"><strong>id:</strong> ${id}</p>
+                <p id="productPrice"><strong>cena netto:</strong> ${cena_netto.toString().replace(".", ",")}zł</p>
+                <p id="productAmount"><strong>stan magazynowy:</strong> ${stan} sztuk</p>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#productModal">Edytuj Produkt</button>
+            </div>
+        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
